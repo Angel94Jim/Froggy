@@ -16,11 +16,18 @@ public class Dibujar extends JPanel implements ActionListener{ // la clase Dibuj
     //actionlistener detecte cuando una telca se presione se activara
     //relacion entre rana y dibujar vamos a instanciar
     Frog rana=new Frog(); //objeto rana
+    car coche=new car();
+    car2 cocher=new car2();
+    Back back=new Back();
+    log wood=new log();
+    log2 woodr=new log2();
+    log3 wood2=new log3();
+    Leaf leaf1=new Leaf();
     Timer timer= new Timer(5,this);//tasa de refresco del timer 5 mili seg
     
     //constructor
     public Dibujar(){
-        setBackground(Color.WHITE);// selecciona el color del fondo
+        setBackground(Color.GRAY);// selecciona el color del fondo
         setFocusable(true);// se coloque dentro el objeto y se pueda mover se activa jpanel
         addKeyListener(new teclado());//instanciar clase telcado y capture lo que son teclas
         timer.start(); //empieza el timer
@@ -34,10 +41,30 @@ public class Dibujar extends JPanel implements ActionListener{ // la clase Dibuj
         Graphics2D g2= (Graphics2D)grafica; //va a provenir de graphics 2d
         //establecer imagen en pos
         g2.drawImage(rana.tenerImagen(),rana.tenerX(),rana.tenerY(),null);//Establece imagen en posicion(x,y);
+        g2.drawImage(coche.tenerImagen(),coche.tenerX(),coche.tenerY(),null);
+        g2.drawImage(cocher.tenerImagen(),cocher.tenerX(),cocher.tenerY(),null);
+        g2.drawImage(wood.tenerImagen(),wood.tenerX(),wood.tenerY(),null);
+        g2.drawImage(woodr.tenerImagen(),woodr.tenerX(),woodr.tenerY(),null);
+        g2.drawImage(wood2.tenerImagen(),wood2.tenerX(),wood2.tenerY(),null);
+        g2.drawImage(leaf1.tenerImagen(),leaf1.tenerX(),leaf1.tenerY(),null);
+        
+        
+        
+        
+        g2.drawImage(back.tenerImagen(),back.tenerX(),back.tenerY(),null);// dibuja escenario
+        
     }
     
     public void actionPerformed(ActionEvent e){//cuando se detecte evento
         rana.mover();
+        coche.mover();
+        cocher.mover();
+        wood.mover();
+        woodr.mover();
+        wood2.mover();
+        leaf1.mover();
+        
+        
         repaint();// preestablecido con graphics
     }
     
@@ -46,6 +73,12 @@ public class Dibujar extends JPanel implements ActionListener{ // la clase Dibuj
         
         public void keyPressed(KeyEvent e){
             rana.keyPressed(e);//cuando detecte tecla presionada mande a llamar rana.tecla presionada
+            coche.keyPressed(e);
+            cocher.keyPressed(e);
+            wood.keyPressed(e);
+            woodr.keyPressed(e);
+            wood2.keyPressed(e);
+            leaf1.keyPressed(e);
         }
         
         public void keyReleased(KeyEvent e){

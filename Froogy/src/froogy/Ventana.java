@@ -6,11 +6,12 @@ import javax.swing.JFrame;
 public class Ventana extends javax.swing.JFrame {
 
     public Ventana() {//Solo se modifica esta clase 
+      
        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//parar timer y todos los procesos
        add(new Dibujar()); //crea jpanel dibujar
        
        setTitle("Frogger - POO ");
-       setSize(800,600);//tam. de la ventana
+       setSize(1280,720);//tam. de la ventana
        setVisible(true);
        setLocationRelativeTo(null);//Ejecutar el marco en el el centro de la pantalla;
        setResizable(false);//no poder cambiar la dimension de la pantalla

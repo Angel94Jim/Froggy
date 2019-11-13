@@ -18,8 +18,8 @@ public class Frog {
     
     public Frog(){
         
-        x=380; //posicion inicial
-        y=400; //posicion inicial //valores positivos son hacia abajo
+        x=640; //posicion inicial
+        y=600; //posicion inicial //valores positivos son hacia abajo
         frog="frog.png"; //crga imagen del sapo que se encuentra dentro del paquete
         
         ImageIcon img = new ImageIcon(this.getClass().getResource(frog));//recurso a utilizar, y traer recurso el que esta en frog
@@ -79,6 +79,11 @@ public class Frog {
     public void mover(){
         x+=dx; //acumulador en eje x para desplazarse
         y+=dy; //acumulador en eye y para ir desplazandose
+        
+        if(y<0){
+           y+=dy;
+           y=y+700;
+        }
         
     }
     
